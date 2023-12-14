@@ -1,4 +1,4 @@
 import axios from "axios";
 export default axios.create({
-    baseURL: "https://countserver.onrender.com/"
+    baseURL: "https://countserver.onrender.com"
 })
