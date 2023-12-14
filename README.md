@@ -34,7 +34,7 @@ And more features coming soon!
 Clone the repository:
 
 ```
-git clone https://github.com/YOUR-USERNAME/rockstar-hub
+git clone https://github.com/nayefserag/Rockstar-hub.git
 ```
 
 Install dependencies:
@@ -57,8 +57,5 @@ It also has a custom Node/Express API for tracking website analytics.
 
 Pull requests are welcome! Please open an issue first to discuss what changes you'd like to make.
 
-## License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) file for more details.
-
-Let me know if you would like any changes or have additional information to include! I tried to highlight the key technologies and features that make your project stand out.
+Let me know if you would like any changes or have additional information to include! I tried to highlight the key technologies and features that make your project stand out ^_^
