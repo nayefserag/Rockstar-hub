@@ -7,7 +7,7 @@ export const GameGrid = () => {
     const {data, error , isLoading} = useGames()
     const skeltons = [ 1, 2, 3, 4, 5 , 6]
   return (
-    <SimpleGrid columns={{sm: 1, md: 2, lg: 3, xl: 4}} padding={10} spacing={10}>
+    <SimpleGrid columns={{sm: 1, md: 2, lg: 3, xl: 4}} padding={10} spacing={3}>
         {isLoading && skeltons.map(skelton => <GameCardContainer><GameCardSkelton key={skelton} /></GameCardContainer> )}
         {error && <li>{error}</li>}
         {data.map(game => <GameCardContainer> <GameCard key={game.id} game={game} /> </GameCardContainer>)}
