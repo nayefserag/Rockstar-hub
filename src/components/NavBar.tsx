@@ -1,5 +1,5 @@
 import {  HStack , Image  } from '@chakra-ui/react'
-import logo from '../assets/rockstar_hub.png'
+import logo from '../assets/vite.png'
 import { SearchInput } from './SearchInput'
 import { ColorModeSwitch } from './ColorModeSwitch'
 interface Props {
