@@ -3,13 +3,12 @@ import useGames from "../hooks/useGames"
 import { GameCard } from "./GameCard"
 import { GameCardSkelton } from "./GameCardSkelton"
 import { GameCardContainer } from "./GameCardContainer"
-import { Genre, Platform } from "../hooks/useGenere"
+import { GameQuery } from "../App"
 interface Props {
-  selctedGenre: Genre | null
-  selectedPlatform: Platform | null
+  gamequery: GameQuery
 }
-export const GameGrid = ({ selctedGenre , selectedPlatform }: Props ) => {
-    const {data, error , isLoading} = useGames(selctedGenre, selectedPlatform)
+export const GameGrid = ({ gamequery }: Props ) => {
+    const {data, error , isLoading} = useGames(gamequery)
     const skeltons = [ 1, 2, 3, 4, 5 , 6]
   return (
     <SimpleGrid columns={{sm: 1, md: 2, lg: 3, xl: 4}} padding={10} spacing={3}>

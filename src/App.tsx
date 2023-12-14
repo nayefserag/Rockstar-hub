@@ -6,10 +6,13 @@ import { useState } from "react";
 import { Genre, Platform } from "./hooks/useGenere";
 import { PlatformSelector } from "./components/PlatformSelector";
 import { SortSelector } from "./components/SortSelector";
-
+export interface GameQuery {
+  genre: Genre | null;
+  platform: Platform | null;
+  sortOrder: string;
+}
 function App() {
-  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null);
-  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
   return (
     <Grid
       templateAreas={{
@@ -22,13 +25,13 @@ function App() {
       }}
     >
       <GridItem area={"nav"} > <NavBar /></GridItem>
-      <Show above="lg"><GridItem area={"aside"} padding={5}  > <GenereList selectedGenre={selectedGenre} onSelectGenre={(genre) => setSelectedGenre(genre)} /> </GridItem></Show>
+      <Show above="lg"><GridItem area={"aside"} padding={5}  > <GenereList selectedGenre={gameQuery.genre} onSelectGenre={(genre) => setGameQuery({...gameQuery, genre})} /> </GridItem></Show>
       <GridItem area={"main"} > 
       <HStack spacing={5} paddingLeft={30}  >
-      <PlatformSelector selectedPlatform={selectedPlatform} onSelectPlatform={(platform) => setSelectedPlatform(platform)}  />
-      <SortSelector />
+      <PlatformSelector selectedPlatform={gameQuery.platform} onSelectPlatform={(platform) => setGameQuery({...gameQuery, platform})}  />
+      <SortSelector sortOrders={gameQuery.sortOrder} onSelectSortOrder={(sortOrder) => setGameQuery({...gameQuery, sortOrder})} />
       </HStack>
-      <GameGrid selectedPlatform={selectedPlatform} selctedGenre={selectedGenre} />
+      <GameGrid gamequery={gameQuery}  />
       </GridItem>
 
     </Grid>
