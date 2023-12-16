@@ -7,6 +7,7 @@ interface Props {
 }
 export const PlatformSelector = ({ onSelectPlatform  , selectedPlatform}: Props) => {
     const {data ,error ,isLoading} = usePlatforms();
+    let result = data?.results || [];
     if (error) return null;
     if (isLoading) return <Spinner />;
   return (
@@ -14,7 +15,7 @@ export const PlatformSelector = ({ onSelectPlatform  , selectedPlatform}: Props)
       <Menu >
         <MenuButton as ={Button} rightIcon={<BsChevronDown /> }>{selectedPlatform?.name || 'Platforms'}</MenuButton>
         <MenuList> 
-        {data?.results.map((platform) => <MenuItem onClick={() => onSelectPlatform(platform)} key={platform.id}>{platform.name}</MenuItem>)}
+        {result.map((platform: Platform) => <MenuItem onClick={() => onSelectPlatform(platform)} key={platform.id}>{platform.name}</MenuItem>)}
         </MenuList>
       </Menu>
     </>

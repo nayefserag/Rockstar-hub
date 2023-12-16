@@ -1,5 +1,6 @@
 import axios from "axios";
 export interface FetchRes <T> {
+    next: string | null;
     count: number
     results : T[]
 }
