@@ -1,10 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 import  apiClient ,{ FetchRes }  from "../services/api-client"
-export interface Platform {
-    id: number
-    name: string
-    slug: string
-}
+
 export interface Genre {
     id: number
     name: string
