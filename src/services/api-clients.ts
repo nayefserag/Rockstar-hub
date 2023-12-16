@@ -17,11 +17,11 @@ class ApiClient <T> {
         this.endpoint = endpoint
     }
     getAll = async (config? :AxiosRequestConfig )=>{
-        const res = await axiosinstance.get<T[]>(this.endpoint, config);
+        const res = await axiosinstance.get(this.endpoint, config);
         return res.data;
          
     }
-    post = (data: T) =>{
+    post = (data: any) =>{
         return axiosinstance.post<T>(this.endpoint, data).then((res) => res.data)
         
     }

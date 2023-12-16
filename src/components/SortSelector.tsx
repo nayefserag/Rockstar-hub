@@ -20,7 +20,6 @@ export const SortSelector = ({ onSelectSortOrder , sortOrders }: Props ) => {
     { value: "companies", label: "Companies" },
     { value: "-playtime", label: "Playtime" },
     { value: "-relevance", label: "Relevance" },
-    { value: "-added", label: "Date added" },
   ];
   const currentSortOrder = sortOrder.find(
     (order) => order.value === sortOrders

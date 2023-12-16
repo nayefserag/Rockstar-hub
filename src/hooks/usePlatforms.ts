@@ -6,11 +6,13 @@ export interface Platform{
     id: number
     name: string
     slug: string,
-    results : {
-        results : Platform[]
-    }
+    // results : {
+    //     result : Platform[] 
+    // }
+    results : any
+
 }
-const usePlatforms = () =>useQuery( {
+const usePlatforms  = () =>useQuery( {
     queryKey: ['platforms'],
     queryFn : apiClient.getAll
     ,staleTime: ms('24h') , //24 hours
