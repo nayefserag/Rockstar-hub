@@ -1,30 +1,61 @@
+ Here is a draft README file for your Rockstar Hub project to use on GitHub:
+
 # Rockstar Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Rockstar Hub is a gaming website built using React, TypeScript, Chakra UI, and Vite. It offers a clean, modern interface to browse and learn about a variety of games using data from the RAWG API. 
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Rockstar Hub aims to be a go-to resource for gamers to discover new titles and see ratings, trailers, descriptions, release dates, and more. The frontend allows seamless browsing and searching of the game catalog.
 
-## Expanding the ESLint configuration
+Some key features and technologies:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Browse, search, and filter games using React and TypeScript
+- Clean, responsive UI built with Chakra UI component library  
+- Lightning-fast interface powered by Vite
+- Node.js backend with custom API to track website visitors  
+- Integrates RAWG API to display game data
+- Attractive, custom theming system
 
-- Configure the top-level `parserOptions` property like this:
+## Usage
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+The site is currently in development but will allow users to:
+
+- Browse games by category, release year, platform 
+- View trailers, descriptions, reviews and more for each game
+- Search for games by title, genre, tag, etc
+- Create wishlists and collections of favorite games
+- Read curated recommendations from the editorial team
+
+And more features coming soon!
+
+## Installation
+
+Clone the repository:
+
+```
+git clone https://github.com/nayefserag/Rockstar-hub.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Install dependencies:
+
+```
+npm install
+```
+
+```
+npm run dev
+```
+
+## API Reference
+
+Rockstar Hub uses the [RAWG Video Games Database API](https://rawg.io/apidocs) to retrieve and display game data.
+
+It also has a custom Node/Express API for tracking website analytics.
+
+## Contributing
+
+Pull requests are welcome! Please open an issue first to discuss what changes you'd like to make.
+
+
+Let me know if you would like any changes or have additional information to include! I tried to highlight the key technologies and features that make your project stand out ^_^
