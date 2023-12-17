@@ -3,13 +3,11 @@ import useGames, { Game } from "../hooks/useGames";
 import { GameCard } from "./GameCard";
 import { GameCardSkelton } from "./GameCardSkelton";
 import { GameCardContainer } from "./GameCardContainer";
-import { GameQuery } from "../App";
 import { Text } from "@chakra-ui/react";
 import React from "react";
-interface Props {
-  gamequery: GameQuery;
-}
-export const GameGrid = ({ gamequery }: Props) => {
+
+export const GameGrid = () => {
+  
   const {
     data,
     error,
@@ -17,7 +15,7 @@ export const GameGrid = ({ gamequery }: Props) => {
     fetchNextPage,
     hasNextPage,
     isFetchingNextPage,
-  } = useGames(gamequery);
+  } = useGames();
   const skeltons = [1, 2, 3, 4, 5, 6];
   if (error) return <Text>{error.message}</Text>;
   return (
