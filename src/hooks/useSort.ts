@@ -1,15 +1,12 @@
 import { useQuery } from "@tanstack/react-query"
-import  apiClient ,{ FetchRes }  from "../services/api-client"
-interface Sort{
-    id: number
-    name: string
-    slug: string
-}
+import  ApiClient   from "../services/api-clients"
+import { Sort } from "../Entites/Sort"
+const apiClient = new ApiClient<Sort>('/platforms/lists/parents')
 const useSort = () =>useQuery({
     // return useData<Sort>('/platforms/lists/parents')
     queryKey: ['sort'],
-    queryFn: () => apiClient
-                    .get<FetchRes<Sort>>('/platforms/lists/parents')
-                    .then(res => res.data)
+    queryFn: () => apiClient.get,
+    staleTime: 24 * 60 * 60 * 100 , //24 hours
+
 })
  export default useSort

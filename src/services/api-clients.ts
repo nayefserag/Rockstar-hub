@@ -1,5 +1,6 @@
 import axios, { AxiosRequestConfig } from "axios";
 export interface FetchRes <T> {
+    next: string | null;
     count: number
     results : T[]
 }
@@ -20,10 +21,13 @@ class ApiClient <T> {
         const res = await axiosinstance.get(this.endpoint, config);
         return res.data;
          
-    }
+    };
     post = (data: any) =>{
         return axiosinstance.post<T>(this.endpoint, data).then((res) => res.data)
         
+    };
+    get = (id: string | number) =>{
+        return axiosinstance.get<T>(this.endpoint + '/' + id).then((res) => res.data)
     }
 }
 export default ApiClient

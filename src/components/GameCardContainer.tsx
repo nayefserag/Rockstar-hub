@@ -1,10 +1,21 @@
-import { Box } from '@chakra-ui/react'
+import { Box } from "@chakra-ui/react";
 interface Props {
-    children: React.ReactNode
+  children: React.ReactNode;
 }
 
-export const GameCardContainer =  ( { children }: Props) => {
+export const GameCardContainer = ({ children }: Props) => {
   return (
-    <Box   borderRadius={10} overflow={"hidden"}> {children} </Box>
-  )
-}
+    <Box
+      _hover={{
+        transform: "scale(1.05)",
+        transition: "transform 0.15s ease",
+        boxShadow: "2xl",
+      }}
+      borderRadius={10}
+      overflow={"hidden"}
+    >
+      {" "}
+      {children}{" "}
+    </Box>
+  );
+};
