@@ -27,7 +27,7 @@ export const GameDetails = () => {
   if (error || !game) throw error;
   return (
     <>
-      <Heading>{game.name}</Heading>
+      <Heading as="h1" fontSize="5xl" margin={5}>{game.name}</Heading>
       <ExpandableText>{game.description_raw}</ExpandableText>
       <Attributes game={game} />
     </>

@@ -11,7 +11,7 @@ export const ExpandableText = ({ children }: Props) => {
   const summary = expand ? children : children.substring(0, limit)+ '...';
 
   return (
-    <Text>
+    <Text margin={5} >
       {summary}
       <Button
         colorScheme="yellow"

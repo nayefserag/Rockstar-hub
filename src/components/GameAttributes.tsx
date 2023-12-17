@@ -1,5 +1,5 @@
-import { Box, Heading, Text } from '@chakra-ui/react';
-import { Game } from '../Entites/Game';
+import { Box, Heading } from '@chakra-ui/react';
+
 interface Props {
     term : string
     children : React.ReactNode
