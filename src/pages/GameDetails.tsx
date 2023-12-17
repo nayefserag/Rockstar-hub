@@ -3,11 +3,12 @@ import useGame from "../hooks/useGame";
 import { Heading, Spinner } from "@chakra-ui/react";
 import { ExpandableText } from "../components/ExpandableText";
 import { Attributes } from "../components/Attributes";
+import { GameTrailer } from "../components/GameTrailer";
+import { GameScreenshots } from "../components/GameScreenshots";
 
 
 export const GameDetails = () => {
   const { slug } = useParams();
-  console.log(slug);
   const { data: game, error, isLoading } = useGame(slug!);
   if (isLoading)
     return (
@@ -30,6 +31,8 @@ export const GameDetails = () => {
       <Heading as="h1" fontSize="5xl" margin={5}>{game.name}</Heading>
       <ExpandableText>{game.description_raw}</ExpandableText>
       <Attributes game={game} />
+      <GameTrailer gameId={game.id} />
+      <GameScreenshots gamepk={game.id} />
     </>
   );
 };
