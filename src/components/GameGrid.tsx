@@ -4,7 +4,6 @@ import { Game } from "../Entites/Game";
 import { GameCard } from "./GameCard";
 import { GameCardSkelton } from "./GameCardSkelton";
 import { GameCardContainer } from "./GameCardContainer";
-import { Text } from "@chakra-ui/react";
 import React from "react";
 
 export const GameGrid = () => {
@@ -17,7 +16,7 @@ export const GameGrid = () => {
     isFetchingNextPage,
   } = useGames();
   const skeltons = [1, 2, 3, 4, 5, 6];
-  if (error) return <Text>{error.message}</Text>;
+  if (error) throw error;
   return (
     <>
       <SimpleGrid
