@@ -7,7 +7,6 @@ export const GameScreenshots = ({ gamepk }: Props) => {
     const { data , error, isLoading } =useScreenshots(gamepk)
     if (isLoading) return <Spinner />
     if (error) throw error
-    console.log("data :",data)
   return (
     <>
     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={2} padding={5} >

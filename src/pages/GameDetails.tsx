@@ -1,11 +1,10 @@
 import { useParams } from "react-router-dom";
 import useGame from "../hooks/useGame";
-import { Heading, Spinner } from "@chakra-ui/react";
+import { GridItem, Heading, SimpleGrid, Spinner } from "@chakra-ui/react";
 import { ExpandableText } from "../components/ExpandableText";
 import { Attributes } from "../components/Attributes";
 import { GameTrailer } from "../components/GameTrailer";
 import { GameScreenshots } from "../components/GameScreenshots";
-
 
 export const GameDetails = () => {
   const { slug } = useParams();
@@ -28,11 +27,19 @@ export const GameDetails = () => {
   if (error || !game) throw error;
   return (
     <>
-      <Heading as="h1" fontSize="5xl" margin={5}>{game.name}</Heading>
-      <ExpandableText>{game.description_raw}</ExpandableText>
-      <Attributes game={game} />
-      <GameTrailer gameId={game.id} />
-      <GameScreenshots gamepk={game.id} />
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5} padding={5}>
+        <GridItem>
+          <Heading as="h1" fontSize="5xl" margin={5}>
+            {game.name}
+          </Heading>
+          <ExpandableText>{game.description_raw}</ExpandableText>
+          <Attributes game={game} />
+        </GridItem>
+        <GridItem>
+          <GameTrailer gameId={game.id} />
+          <GameScreenshots gamepk={game.id} />
+        </GridItem>
+      </SimpleGrid>
     </>
   );
 };

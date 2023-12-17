@@ -10,7 +10,6 @@ export const GameTrailer = ({ gameId }: Props ) => {
     if (error) throw error;
 
     const first = data?.results[0];
-    console.log( "first", first)
     return first? (
         <video width="100%" controls autoPlay src={first.data[480]}  />
     ) : null
