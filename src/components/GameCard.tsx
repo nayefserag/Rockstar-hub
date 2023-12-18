@@ -11,6 +11,7 @@ interface GameCardProps {
 }
 export const GameCard = ({ game }: GameCardProps) => {
   return (
+    <Link to={"/games/" + game.slug}>
     <Card
       _hover={{
         transform: "scale(1.05)",
@@ -25,7 +26,7 @@ export const GameCard = ({ game }: GameCardProps) => {
         h={"170px"}
         alt={game.name}
       />
-      <CardBody>
+     <CardBody>
         <HStack justifyContent={"space-between"} marginBottom={3}>
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
@@ -33,10 +34,11 @@ export const GameCard = ({ game }: GameCardProps) => {
           <CriticScore score={game.metacritic} />
         </HStack>
         <Heading fontSize={"2xl"}>
-          <Link to={"/games/" + game.slug}>{game.name}</Link>
+          {game.name}
           <Emoji rating={game.rating_top} />
         </Heading>
       </CardBody>
     </Card>
+      </Link>
   );
 };
