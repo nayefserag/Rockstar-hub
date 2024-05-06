@@ -1,8 +1,8 @@
+<h1 align="center"> Rockstar Hub</h1>
 <p align="center">
-<a href="https://imgur.com/9Ikyewy"><img src="https://i.imgur.com/9Ikyewy.png" title="source: imgur.com" /></a>
+<a href="icons8-giocare-512.png"><img src="icons8-giocare-512.png" title="source: imgur.com" /></a>
 </p>
 
-<h1 align="center"> Rockstar Hub</h1>
 
 Rockstar Hub is a gaming website built using React, TypeScript, Chakra UI, and Vite. It offers a clean, modern interface to browse and learn about a variety of games using data from the RAWG API. 
 
